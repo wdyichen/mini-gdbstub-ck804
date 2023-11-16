@@ -375,7 +375,7 @@ int main(int argc, char *argv[])
     if (argc == 4)
         sprintf(ip_port, "%s:%s", "127.0.0.1", argv[3]);
     else
-        sprintf(ip_port, "%s:%hu", "127.0.0.1", 1234);
+        sprintf(ip_port, "%s:%d", "127.0.0.1", 1234);
 
     if (!gdbstub_init(&ck804.gdbstub, &emu_ops,
                       (arch_info_t) {
