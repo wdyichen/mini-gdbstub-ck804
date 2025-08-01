@@ -730,7 +730,7 @@ void process_xfer(gdbstub_t *gdbstub, char *s)
             if (!pos) assert(0);
             pos++;
             uint32_t get_length = strtol(pos, NULL, 16);
-            if (0 == start_pos)
+            if ((sizeof(CSKY_CK804_TARGET_XML) - start_pos) > get_length)//if (0 == start_pos)
                 snprintf(buf, 1 + get_length + 1, "m%s", CSKY_CK804_TARGET_XML + start_pos);
             else
                 snprintf(buf, 1 + get_length + 1, "l%s", CSKY_CK804_TARGET_XML + start_pos);
